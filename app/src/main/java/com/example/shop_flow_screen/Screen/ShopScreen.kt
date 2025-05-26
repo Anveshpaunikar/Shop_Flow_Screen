@@ -2,6 +2,7 @@ package com.example.shop_flow_screen.Screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
@@ -33,8 +34,6 @@ fun ShopScreen() {
         Spacer(Modifier.height(16.dp))
         CategoriesSection()
         Spacer(Modifier.height(16.dp))
-        Text("New products", color = Color.White, fontSize = 20.sp, fontWeight = FontWeight.Bold)
-        Spacer(Modifier.height(8.dp))
         ProductCard()
         Spacer(Modifier.height(16.dp))
         }

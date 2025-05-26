@@ -2,6 +2,7 @@ package com.example.shop_flow_screen.Screen
 
 import android.content.Context
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -18,6 +19,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material.icons.filled.FavoriteBorder
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.ShoppingCart
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
@@ -50,6 +52,8 @@ fun TopBar() {
         Icon(Icons.Default.ArrowBack, contentDescription = "Back", tint = Color.White)
         Text("Shop", color = Color.White, fontSize = 20.sp, fontWeight = FontWeight.Bold)
         Row {
+            Icon(Icons.Default.Search, contentDescription = "Search", tint = Color.White)
+            Spacer(Modifier.width(12.dp))
             Icon(Icons.Default.FavoriteBorder, contentDescription = "Wishlist", tint = Color.White)
             Spacer(Modifier.width(12.dp))
             Icon(Icons.Default.ShoppingCart, contentDescription = "Cart", tint = Color.White)
@@ -66,11 +70,14 @@ fun PromoBanner(context: Context = LocalContext.current) {
         }
         .build()
 
-    Box(modifier = Modifier.fillMaxSize().clip(RoundedCornerShape(20.dp))) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .clip(RoundedCornerShape(20.dp))
+    ) {
         Image(
             painter = painterResource(R.drawable.shopflowcard1),
             contentDescription = "Top Banner",
-            contentScale = ContentScale.Crop
         )
 
         Column(
@@ -80,13 +87,19 @@ fun PromoBanner(context: Context = LocalContext.current) {
             Text(
                 "GET 20% OFF",
                 color = Color.White,
-                fontSize = 50.sp,
+                fontSize = 40.sp,
                 fontWeight = FontWeight.Bold,
             )
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            Text("12–16 October", color = Color(0xFF7BEA60), fontSize = 20.sp)
+            Text(
+                text = "12–16 October",
+                color = Color(0xFF080907),
+                fontSize = 20.sp,
+                modifier = Modifier
+                    .background(Color(0xFF7BEA60), RoundedCornerShape(10.dp))
+            )
         }
     }
 }

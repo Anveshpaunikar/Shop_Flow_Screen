@@ -8,9 +8,11 @@ import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.heightIn
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
@@ -38,6 +40,7 @@ import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.max
 import androidx.compose.ui.unit.sp
 import androidx.core.text.buildSpannedString
 import coil.ImageLoader
@@ -55,16 +58,24 @@ fun ProductCard(context: Context = LocalContext.current) {
         .build()
 
 
+Column {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        horizontalArrangement = Arrangement.SpaceBetween
+    ) {
+        Text("New products", color = Color.White, fontSize = 20.sp, fontWeight = FontWeight.Bold)
+        Text("See all", color = Color.White, fontSize = 14.sp, textDecoration = TextDecoration.Underline)
+    }
+}
+
     Card(
         modifier = Modifier
             .padding(5.dp)
-            .wrapContentSize()
-            .wrapContentHeight()
-
+            .fillMaxWidth()
 
     ) {
         Box(
-            modifier = Modifier.fillMaxSize()
+            modifier = Modifier.wrapContentSize()
                 .background(Color(0xFF3F3E3E))
         ) {
             AsyncImage(
@@ -73,7 +84,7 @@ fun ProductCard(context: Context = LocalContext.current) {
                     .build(),
                 imageLoader = imageLoader,
                 contentDescription = null,
-                modifier = Modifier.fillMaxSize(),
+
             )
             IconButton(
                 onClick = { },

@@ -14,6 +14,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.shop_flow_screen.Data.Category
@@ -38,7 +39,7 @@ fun CategoriesSection() {
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Text("Categories", color = Color.White, fontWeight = FontWeight.Bold, fontSize = 18.sp)
-            Text("See all", color = Color.Gray, fontSize = 14.sp)
+            Text("See all", color = Color.White, fontSize = 14.sp, textDecoration = TextDecoration.Underline)
         }
         Spacer(Modifier.height(15.dp))
         LazyRow {
