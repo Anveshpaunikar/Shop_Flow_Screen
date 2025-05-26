@@ -35,10 +35,8 @@ fun ShopScreen() {
         Spacer(Modifier.height(16.dp))
         Text("New products", color = Color.White, fontSize = 20.sp, fontWeight = FontWeight.Bold)
         Spacer(Modifier.height(8.dp))
-
-
-            ProductCard()
-            Spacer(Modifier.height(16.dp))
+        ProductCard()
+        Spacer(Modifier.height(16.dp))
         }
     }
 
