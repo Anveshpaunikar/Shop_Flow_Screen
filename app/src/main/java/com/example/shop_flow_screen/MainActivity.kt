@@ -13,7 +13,6 @@ class MainActivity: ComponentActivity() {
 
         setContent {
             Shop_Flow_ScreenTheme {
-
                     ShopScreen()
             }
         }
